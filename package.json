@@ -2,11 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "server side for vacations project",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node src/server.ts",
     "build": "tsc",
-    "start": "node ./dist/server.js"
+    "start": " node dist/server.js",
+    "postinstall": "tsc"
   },
   "author": "Tom",
   "license": "ISC",

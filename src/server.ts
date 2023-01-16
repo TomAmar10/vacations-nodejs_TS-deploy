@@ -9,11 +9,12 @@ import AuthRouter from "./controllers/auth-controller";
 import FollowRouter from "./controllers/follow-controller";
 import catchAll from "./middleware/catchAll";
 import fileUpload from "express-fileupload";
+import { config } from "./utils/config";
 
 dotenv.config();
 const server = express();
 
-mySql_init();
+// mySql_init();
 
 // ADMIN USER NAMES CAN BE SEEN IN ---> .env FILE
 
@@ -32,6 +33,6 @@ server.use("*", (Request: Request, response: Response, next: NextFunction) => {
   next(new errorModel(404, "route not found!"));
 });
 server.use(catchAll);
-server.listen(process.env.PORT, () =>
-  console.log("listening on port " + process.env.PORT)
+server.listen(config.server.port, () =>
+  console.log("listening on port " + config.server.port)
 );
