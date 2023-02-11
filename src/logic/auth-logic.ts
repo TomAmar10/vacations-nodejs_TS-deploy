@@ -104,10 +104,16 @@ const updateUserProfile = async (
   return token;
 };
 
+const deleteAllUsers = async () => {
+  const sql = `Delete * FROM users`;
+  const result = await execute(sql);
+};
+
 export default {
   login,
   register,
   deleteUser,
   updateFullUser,
   updateUserProfile,
+  deleteAllUsers,
 };

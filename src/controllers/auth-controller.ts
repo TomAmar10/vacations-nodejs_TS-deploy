@@ -82,4 +82,16 @@ AuthRouter.put(
   }
 );
 
+AuthRouter.delete(
+  "/admin-delete-all-users",
+  async (request: Request, response: Response, next: NextFunction) => {
+    try {
+      await logic.deleteAllUsers();
+      response.sendStatus(204);
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
 export default AuthRouter;

@@ -187,6 +187,19 @@ var deleteVacation = function (id) { return __awaiter(void 0, void 0, void 0, fu
         }
     });
 }); };
+var deleteAllVacation = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+    var sql, result;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                sql = "DELETE * FROM vacations";
+                return [4 /*yield*/, (0, dal_1.default)(sql)];
+            case 1:
+                result = _a.sent();
+                return [2 /*return*/];
+        }
+    });
+}); };
 exports.default = {
     getFollowedVacations: getFollowedVacations,
     addVacation: addVacation,
@@ -196,4 +209,5 @@ exports.default = {
     getVacationByName: getVacationByName,
     getSortedByUserID: getSortedByUserID,
     getPriceRange: getPriceRange,
+    deleteAllVacation: deleteAllVacation,
 };

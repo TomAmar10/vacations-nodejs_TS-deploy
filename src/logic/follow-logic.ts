@@ -24,8 +24,14 @@ const deleteFollow = async (followerId: number, vacationId: number) => {
   await execute(sql);
 };
 
+const deleteAllFollows = async () => {
+  const sql = `DELETE * FROM follows`;
+  await execute(sql);
+};
+
 export default {
   getAllFollows,
   addFollow,
   deleteFollow,
+  deleteAllFollows,
 };
