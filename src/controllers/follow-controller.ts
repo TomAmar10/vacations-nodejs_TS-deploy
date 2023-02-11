@@ -45,16 +45,5 @@ FollowRouter.delete(
   }
 );
 
-FollowRouter.delete(
-  "/admin-delete-all-follows",
-  async (request: Request, response: Response, next: NextFunction) => {
-    try {
-      await logic.deleteAllFollows();
-      response.sendStatus(204);
-    } catch (err) {
-      next(err);
-    }
-  }
-);
 
 export default FollowRouter;

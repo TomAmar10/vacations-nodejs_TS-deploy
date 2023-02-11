@@ -139,16 +139,5 @@ VacationRouter.put(
   }
 );
 
-VacationRouter.delete(
-  "/admin-delete-all-vacations",
-  async (request: Request, response: Response, next: NextFunction) => {
-    try {
-      await logic.deleteAllVacation();
-      response.sendStatus(204);
-    } catch (err) {
-      next(err);
-    }
-  }
-);
 
 export default VacationRouter;

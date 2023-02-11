@@ -121,11 +121,6 @@ const deleteVacation = async (id: number) => {
   await execute(sql2);
 };
 
-const deleteAllVacation = async () => {
-  const sql = `DELETE * FROM vacations`;
-  const result = await execute(sql);
-};
-
 export default {
   getFollowedVacations,
   addVacation,
@@ -135,5 +130,4 @@ export default {
   getVacationByName,
   getSortedByUserID,
   getPriceRange,
-  deleteAllVacation,
 };

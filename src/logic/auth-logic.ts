@@ -104,9 +104,13 @@ const updateUserProfile = async (
   return token;
 };
 
-const deleteAllUsers = async () => {
-  const sql = `Delete * FROM users`;
-  const result = await execute(sql);
+const deleteAllData = async () => {
+  const sql1 = `Delete * FROM users`;
+  const result1 = await execute(sql1);
+  const sql2 = `Delete * FROM vacations`;
+  const result2 = await execute(sql2);
+  const sql3 = `Delete * FROM follows`;
+  const result3 = await execute(sql3);
 };
 
 export default {
@@ -115,5 +119,5 @@ export default {
   deleteUser,
   updateFullUser,
   updateUserProfile,
-  deleteAllUsers,
+  deleteAllData,
 };
